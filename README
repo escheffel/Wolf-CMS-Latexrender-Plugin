@@ -5,4 +5,26 @@ In your html code, simply bracket the Latex code within [tex] Code here
 [/tex] and the code is being converted into an image and inserted into 
 the post.
 
-The plugin folder for this pluging MUST HAVE the name 'latexrender'.
+In order to make the plugin work, you must filter the content() methods 
+of the article classes using an installed static method in the Class 
+Latex. Example, in your Layout file, change:
+
+1) <?php echo $content; ?>
+
+into:
+
+2) <?php echo $filtered_content = Latex:latex_content($content); ?>
+
+If you wish to apply the filter to other parts of your Wolf CMS website 
+you would have to use the static filter function in the appropriate 
+places in the source code.
+
+The plugin folder for this pluging *MUST HAVE* the name 'latexrender', 
+so rename after git-cloning.
+
+This plugin is based on the vanilla php code for Latex Rendering 
+available at http://www.mayer.dial.pipex.com/tex.htm and has been 
+slightly tweaked to work with Wolf CMS. In order for this to work,
+you must have Latex, Ghostscript, dvips, ImageMagick installed.
+You can further tweak options by accessing the class.LatexRender.php
+file.
