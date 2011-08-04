@@ -1,7 +1,7 @@
 A basic pluging which permits the rendering of Latex commands in Wolf 
 CMS posts/articles.
 
-In your html code, simply bracket the Latex code within [tex] Code here 
+In your html code, simply bracket the Latex code within [tex] LATEX CODE HERE 
 [/tex] and the code is being converted into an image and inserted into 
 the post.
 
