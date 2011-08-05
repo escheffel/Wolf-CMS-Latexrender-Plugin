@@ -32,37 +32,43 @@
  */
  
 ?>
+<div id="latexrender_content">
 <h1><?php echo __('Latex Render Documentation'); ?></h1>
 <h3><?php echo __('Basic plugin to permit rendering of Latex commands'); ?></h3>
-<p><?php echo __('Sitemap adress is:'); ?> http://github.com/escheffel/Wolf-CMS-Latexrender-Plugin
 
-<p><?php echo __('Instructions:'); ?>
+<h2><?php echo __('Instructions:'); ?></h2>
 A basic pluging which permits the rendering of Latex commands in Wolf 
 CMS posts/articles.</p>
 
-<p>In your html code, simply bracket the Latex code within [tex] Code here 
-[/tex] and the code is being converted into an image and inserted into 
+<p>In your html code, simply bracket the Latex code within
+<code> [tex] Latex Commands here [/tex] </code>
+and the code is being converted into an image and inserted into 
 the post.</p>
 
 <p>In order to make the plugin work, you must filter the content() methods 
 of the article classes using an installed static method in the Class 
 Latex. Example, in your Layout file, change:</p>
 
-1) <?php echo "<\\?php echo \$content; \\?>"; ?><BR>
+<code>&lt;?php echo $content; ?&gt;</code>
 
-into:<BR>
+into:
 
-2) <?php echo "<\\?php echo \$filtered_content = Latex:latex_content($content); \\?>"; ?><BR>
+<code>&lt;?php echo $filtered_content = Latex:latex_content($content); ?&gt;</code>
 
-<p>If you wish to apply the filter to other parts of your Wolf CMS website 
+<p>If you wish to apply the filter to other parts of your Wolf CMS website (such as the Comments 
+content - which may also contain equations in posted replies ) 
 you would have to use the static filter function in the appropriate 
 places in the source code.</p>
 
-<p>The plugin folder for this pluging *MUST HAVE* the name 'latexrender', 
+<h2><?php echo __('Installation:'); ?></h2>
+
+<p>The plugin folder for this plugin *MUST HAVE* the name 'latexrender', 
 so rename after git-cloning.</p>
 
 <p>This plugin is based on the vanilla php code for Latex Rendering 
-available at http://www.mayer.dial.pipex.com/tex.htm and has been 
+available at <a href='http://www.mayer.dial.pipex.com/tex.htm' 
+target='_blank'>http://www.mayer.dial.pipex.com/tex.htm</a> and has 
+been 
 slightly tweaked to work with Wolf CMS. In order for this to work,
 you must have Latex, Ghostscript, dvips, ImageMagick installed.
 You can further tweak options by accessing the class.LatexRender.php
@@ -70,3 +76,4 @@ file.</p>
 
 Happy Latex Rendering !<BR>
 Eric Scheffel
+</div>

@@ -30,7 +30,7 @@ class LatexRenderController extends PluginController {
 
     public function __construct() {
         $this->setLayout('backend');
-		//$this->assignToLayout('sidebar', new View('../../plugins/latexrender/views/sidebar'));
+        $this->assignToLayout('sidebar', new View('../../plugins/latexrender/views/sidebar'));
     }
 	public function index() {
         $this->documentation();
@@ -38,5 +38,26 @@ class LatexRenderController extends PluginController {
 	public function documentation() {
         $this->display('latexrender/views/documentation');
     }
+
+        public function settings() {
+        $settings = Plugin::getAllSettings('latexrender');
+        $this->display('latexrender/views/settings', $settings);
+    }
+
+        public function save() {
+        $db_dsn = explode(';', DB_DSN);
+        $db_host = str_replace('host=','',$db_dsn[1]);
+		
+	if (mysql_connect($db_host, DB_USER, DB_PASS)) {
+            $image_format = mysql_real_escape_string($_POST['image_format']);
+            $settings = array('image_format' => $image_format);
+            $ret = Plugin::setAllSettings($settings, 'latexrender');
+	}
+        if ($ret) Flash::set('success', __('The settings have been updated.'));
+        else Flash::set('error', __('An error has occured.'));
+
+        redirect(get_url('plugin/latexrender/settings'));
+	}
+
 
 }
