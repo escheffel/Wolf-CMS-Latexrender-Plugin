@@ -49,11 +49,11 @@ the post.</p>
 of the article classes using an installed static method in the Class 
 Latex. Example, in your Layout file, change:</p>
 
-<code>&lt;?php echo $content; ?&gt;</code>
+<code>&lt;?php echo $article->content(); ?&gt;</code>
 
 into:
 
-<code>&lt;?php echo $filtered_content = Latex:latex_content($content); ?&gt;</code>
+<code>&lt;?php echo Latex:latex_content($article->content()); ?&gt;</code>
 
 <p>If you wish to apply the filter to other parts of your Wolf CMS website (such as the Comments 
 content - which may also contain equations in posted replies ) 

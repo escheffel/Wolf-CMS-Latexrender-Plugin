@@ -2,7 +2,7 @@
 Plugin::setInfos(array(
     'id'          => 'latexrender',
     'title'       => 'Latex Render', 
-    'description' => 'Render Latex commands which are included as images in post.',
+    'description' => 'Render Latex commands which are then included as images in post.',
     'license'     => 'GPL',
     'author'      => 'Eric M. Scheffel', 
     'version'     => '0.0.1',
