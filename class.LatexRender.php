@@ -28,35 +28,35 @@ class LatexRender {
     // ====================================================================================
     // Variable Definitions
     // ====================================================================================
-    var $_picture_path = "";
-    var $_picture_path_httpd = "";
-    var $_tmp_dir = "";
+    public $_picture_path = "";
+    public $_picture_path_httpd = "";
+    public $_tmp_dir = "";
     // i was too lazy to write mutator functions for every single program used
     // just access it outside the class or change it here if nescessary
-    var $_latex_path = "/usr/bin/latex";
-    var $_dvips_path = "/usr/bin/dvips";
-    var $_convert_path = "/usr/bin/convert";
-    var $_identify_path="/usr/bin/identify";
-    var $_formula_density = 120;
-    var $_xsize_limit = 500;
-    var $_ysize_limit = 500;
-    var $_string_length_limit = 500;
-	var $_font_size = 10;
-	var $_latexclass = "article"; //install extarticle class if you wish to have smaller font sizes
-    var $_tmp_filename;
-	var $_image_format = "png"; //change to png if you prefer
+    public $_latex_path = "/usr/bin/latex";
+    public $_dvips_path = "/usr/bin/dvips";
+    public $_convert_path = "/usr/bin/convert";
+    public $_identify_path="/usr/bin/identify";
+    public $_formula_density = 120;
+    public $_xsize_limit = 500;
+    public $_ysize_limit = 500;
+    public $_string_length_limit = 500;
+    public $_font_size = 10;
+    public $_latexclass = "article"; //install extarticle class if you wish to have smaller font sizes
+    public $_tmp_filename;
+    public $_image_format = "png"; //change to png if you prefer
     // this most certainly needs to be extended. in the long term it is planned to use
     // a positive list for more security. this is hopefully enough for now. i'd be glad
     // to receive more bad tags !
-    var $_latex_tags_blacklist = array(
+    public $_latex_tags_blacklist = array(
         "include","def","command","loop","repeat","open","toks","output","input",
         "catcode","name","^^",
         "\\every","\\errhelp","\\errorstopmode","\\scrollmode","\\nonstopmode","\\batchmode",
         "\\read","\\write","csname","\\newhelp","\\uppercase", "\\lowercase","\\relax","\\aftergroup",
         "\\afterassignment","\\expandafter","\\noexpand","\\special"
         );
-    var $_errorcode = 0;
-	var $_errorextra = "";
+    public $_errorcode = 0;
+	public $_errorextra = "";
 
 
     // ====================================================================================

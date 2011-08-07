@@ -26,6 +26,8 @@ if (!defined('IN_CMS')) { exit(); }
  * Use this SkeletonController and this skeleton plugin as the basis for your
  * new plugins if you want.
  */
+
+
 class LatexRenderController extends PluginController {
 
     private static function _checkPermission() {

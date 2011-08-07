@@ -52,6 +52,32 @@ value="<?php echo $settings['convert_path']; ?>" />
 	</tr>
         </table>
     </fieldset>
+
+<br/>
+    <fieldset style="padding: 0.5em;">
+        <legend style="padding: 0em 0.5em 0em 0.5em; font-weight: bold;"><?php echo __('Latex Render Output Path Settings'); ?></legend>
+        <table class="fieldset" cellpadding="0" cellspacing="0" border="0">
+	    <tr>
+		<td class="label"><label for="picture_path"><?php echo __('Absolute path to 
+picture path'); ?>: </label></td>
+		<td class="field">
+			<input type="text" class="textbox" name=settings[picture_path] 
+value="<?php echo $settings['picture_path']; ?>" />
+		</td>
+		<td class="help"><?php echo __("Insert here the full (absolute) path of Latexrender's picture output path "); ?></td>
+	</tr>
+	    <tr>
+		<td class="label"><label for="tmp_path"><?php echo __('Absolute path to 
+tmp path'); ?>: </label></td>
+		<td class="field">
+			<input type="text" class="textbox" name=settings[tmp_path] 
+value="<?php echo $settings['tmp_path']; ?>" />
+		</td>
+		<td class="help"><?php echo __("Insert here the full (absolute) path of Latexrender's tmp path "); ?></td>
+	</tr>
+        </table>
+    </fieldset>
+
     <br/>
     <p class="buttons">
         <input class="button" name="commit" type="submit" accesskey="s" value="<?php echo __('Save'); ?>" />
