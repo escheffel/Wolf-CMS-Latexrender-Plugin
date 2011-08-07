@@ -28,36 +28,55 @@ if (!defined('IN_CMS')) { exit(); }
  */
 class LatexRenderController extends PluginController {
 
+    private static function _checkPermission() {
+        AuthUser::load();
+        if ( ! AuthUser::isLoggedIn()) {
+            redirect(get_url('login'));
+        }
+        else if ( ! AuthUser::getId() == 1) {
+            Flash::set('error', __('You do not have permission to access the requested page!'));
+            redirect(get_url());
+        }
+    }
+
     public function __construct() {
         $this->setLayout('backend');
         $this->assignToLayout('sidebar', new View('../../plugins/latexrender/views/sidebar'));
     }
-	public function index() {
+
+    public function index() {
         $this->documentation();
     }
-	public function documentation() {
+    public function documentation() {
         $this->display('latexrender/views/documentation');
     }
 
-        public function settings() {
-        $settings = Plugin::getAllSettings('latexrender');
-        $this->display('latexrender/views/settings', $settings);
+    public function settings() {
+        $this->display('latexrender/views/settings', array('settings' => Plugin::getAllSettings('latexrender')));
     }
 
-        public function save() {
-        $db_dsn = explode(';', DB_DSN);
-        $db_host = str_replace('host=','',$db_dsn[1]);
-		
-	if (mysql_connect($db_host, DB_USER, DB_PASS)) {
-            $image_format = mysql_real_escape_string($_POST['image_format']);
-            $settings = array('image_format' => $image_format);
+    function save() {
+        if (isset($_POST['settings'])) {
+            $settings = $_POST['settings'];
+            foreach ($settings as $key => $value) {
+                $settings[$key] = mysql_escape_string($value);
+            }
+            
             $ret = Plugin::setAllSettings($settings, 'latexrender');
-	}
-        if ($ret) Flash::set('success', __('The settings have been updated.'));
-        else Flash::set('error', __('An error has occured.'));
+
+            if ($ret) {
+                Flash::set('success', __('The settings have been saved.'));
+            }
+            else {
+                Flash::set('error', 'An error occured trying to save the settings.');
+            }
+        }
+        else {
+            Flash::set('error', 'Could not save settings, no settings found.');
+        }
 
         redirect(get_url('plugin/latexrender/settings'));
-	}
+    }
 
 
 }

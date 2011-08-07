@@ -9,11 +9,11 @@ In order to make the plugin work, you must filter the content() methods
 of the article classes using an installed static method in the Class 
 Latex. Example, in your Layout file, change:
 
-1) <?php echo $content; ?>
+1) <?php echo $article->content(); ?>
 
 into:
 
-2) <?php echo $filtered_content = Latex:latex_content($content); ?>
+2) <?php echo Latex:latex_content($article->content()); ?>
 
 If you wish to apply the filter to other parts of your Wolf CMS website 
 you would have to use the static filter function in the appropriate 

@@ -16,9 +16,16 @@
 // Check if the plugin's settings already exist and create them if not.
 if (Plugin::getSetting('image_format', 'latexrender') === false) {
 	// Store settings new style
-	$settings = array('image_format' => '1');
+	$settings = array('image_format' => '1',
+                          'latex_path' => '/usr/bin/latex',
+                          'dvips_path' => '/usr/bin/dvips',
+                          'identify_path' => '/usr/bin/identify',
+                          'convert_path' => '/usr/bin/convert',
+                          'image_path' => CORE_ROOT.'/plugins/latexrender/pictures/',
+                          'tmp_path' => CORE_ROOT.'/plugins/latexrender/tmp/'
+                          );
 
-	Plugin::setAllSettings($settings, 'latexrender');
+    Plugin::setAllSettings($settings, 'latexrender');
 }
 
 Flash::set('success', __('Latex Render: Plugin was successfully enabled!'));
