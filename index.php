@@ -5,7 +5,7 @@ Plugin::setInfos(array(
     'description' => 'Render Latex commands which are then included as images in post.',
     'license'     => 'GPL',
     'author'      => 'Eric M. Scheffel', 
-    'version'     => '0.0.1',
+    'version'     => '0.3.0',
     'require_wolf_version'     => '0.7.5',
     'type'        => 'both',
     'website'     => 'http://www.ericscheffel.com'
