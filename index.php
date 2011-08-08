@@ -17,4 +17,11 @@ Plugin::addController('latexrender', __('Latex Render'), false, false);
 AutoLoader::addFile('LatexRender', CORE_ROOT.'/plugins/latexrender/class.LatexRender.php');
 AutoLoader::addFile('Latex', CORE_ROOT.'/plugins/latexrender/class.Latex.php');
 
+function load_latexrender() {
+
+include_once(CORE_ROOT.'/plugins/latexrender/load_latex_settings.php');
+
+return Latex;
+}
+
 ?>

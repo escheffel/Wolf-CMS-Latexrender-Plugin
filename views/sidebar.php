@@ -14,9 +14,9 @@
 <p>
     <?php echo __('Websites');?>:<br />
     <ul>
-        <li style="list-style:square;margin: 0 0 0 14px"><a target="_blank" href="http://www.mayer.dial.pipex.com/tex.htm">Original LatexRender Vanilla Software Site</a></li>
+        <li style="list-style:square;margin: 0 0 0 14px"><a target="_blank" href="http://www.mayer.dial.pipex.com/tex.htm">Original LatexRender</a><br><a target="_blank" href="http://www.mayer.dial.pipex.com/tex.htm">Vanilla Software Site</a></li>
         <li style="list-style:square;margin: 0 0 0 14px"><a target="_blank" href="https://github.com/escheffel/Wolf-CMS-Latexrender-Plugin"><?php echo __('Latex Render Wolf plugin');?></a></li>
-        <li style="list-style:square;margin: 0 0 0 14px"><a target="_blank" href="http://www.ericscheffel.com">Eric Scheffel's Website (Plugin Author)</a></li>
+        <li style="list-style:square;margin: 0 0 0 14px"><a target="_blank" href="http://www.ericscheffel.com">Eric M. Scheffel's Website</a><br><a target="_blank" href="http://www.ericscheffel.com">(Plugin Author)</a></li>
     </ul>
 </p>
 </div>

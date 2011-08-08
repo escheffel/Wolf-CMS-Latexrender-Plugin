@@ -76,8 +76,9 @@ class LatexRenderController extends PluginController {
         else {
             Flash::set('error', 'Could not save settings, no settings found.');
         }
-
+        
         redirect(get_url('plugin/latexrender/settings'));
+
     }
 
 

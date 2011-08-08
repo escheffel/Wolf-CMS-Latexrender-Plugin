@@ -45,6 +45,12 @@ CMS posts/articles.</p>
 and the code is being converted into an image and inserted into 
 the post.</p>
 
+<p>Then, you need to go to your Layout tab in WolfCMS and add the following line
+just after your &lt;body&gt; tag:
+
+<code>&lt;?php load_latexrender(); ?&gt;</code>
+</p>
+
 <p>In order to make the plugin work, you must filter the content() methods 
 of the article classes using an installed static method in the Class 
 Latex. Example, in your Layout file, change:</p>
