@@ -78,6 +78,61 @@ value="<?php echo $settings['tmp_path']; ?>" />
         </table>
     </fieldset>
 
+<br/>
+    <fieldset style="padding: 0.5em;">
+        <legend style="padding: 0em 0.5em 0em 0.5em; font-weight: bold;"><?php echo __('Latex Render Extra Settings'); ?></legend>
+        <table class="fieldset" cellpadding="0" cellspacing="0" border="0">
+	    <tr>
+		<td class="label"><label for="latex_font_size"><?php echo __('Font size for Latex symbols'); ?>: </label></td>
+		<td class="field">
+			<input type="text" class="textbox" name=settings[latex_font_size] 
+value="<?php echo $settings['latex_font_size']; ?>" />
+		</td>
+		<td class="help"><?php echo __("Specify here the font size with which Latex symbols are rendered. Standard is 12."); ?></td>
+	</tr>
+	    <tr>
+		<td class="label"><label for="latex_class"><?php echo __('Latex class employed in rendering'); ?>: </label></td>
+		<td class="field">
+			<input type="text" class="textbox" name=settings[latex_class] 
+value="<?php echo $settings['latex_class']; ?>" />
+		</td>
+		<td class="help"><?php echo __("Insert here the Latex class to be used for rendering. Standard value is 'article'."); ?></td>
+	</tr>
+	    <tr>
+		<td class="label"><label for="latex_formula_density"><?php echo __('Set formula density (used by ImageMagick)'); ?>: </label></td>
+		<td class="field">
+			<input type="text" class="textbox" name=settings[latex_formula_density] 
+value="<?php echo $settings['latex_formula_density']; ?>" />
+		</td>
+		<td class="help"><?php echo __("Insert here the value for formula density. Standard value is 120."); ?></td>
+	</tr>
+	    <tr>
+		<td class="label"><label for="latex_strlen_limit"><?php echo __('Set string limit for Latex formulae'); ?>: </label></td>
+		<td class="field">
+			<input type="text" class="textbox" name=settings[latex_strlen_limit] 
+value="<?php echo $settings['latex_strlen_limit']; ?>" />
+		</td>
+		<td class="help"><?php echo __("Insert here the value for the string limit. Standard value is 500."); ?></td>
+	</tr>
+	    <tr>
+		<td class="label"><label for="latex_xsize_limit"><?php echo __('Set xsize limit for Latex image'); ?>: </label></td>
+		<td class="field">
+			<input type="text" class="textbox" name=settings[latex_xsize_limit] 
+value="<?php echo $settings['latex_xsize_limit']; ?>" />
+		</td>
+		<td class="help"><?php echo __("Insert here the value for the xsize limit. Standard value is 500."); ?></td>
+	</tr>
+	    <tr>
+		<td class="label"><label for="latex_ysize_limit"><?php echo __('Set ysize limit for Latex image'); ?>: </label></td>
+		<td class="field">
+			<input type="text" class="textbox" name=settings[latex_ysize_limit] 
+value="<?php echo $settings['latex_ysize_limit']; ?>" />
+		</td>
+		<td class="help"><?php echo __("Insert here the value for the ysize limit. Standard value is 500."); ?></td>
+	</tr>
+        </table>
+    </fieldset>
+
     <br/>
     <p class="buttons">
         <input class="button" name="commit" type="submit" accesskey="s" value="<?php echo __('Save'); ?>" />

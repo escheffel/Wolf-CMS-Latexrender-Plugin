@@ -22,7 +22,13 @@ if (Plugin::getSetting('image_format', 'latexrender') === false) {
                           'identify_path' => '/usr/bin/identify',
                           'convert_path' => '/usr/bin/convert',
                           'picture_path' => CORE_ROOT.'/plugins/latexrender/pictures/',
-                          'tmp_path' => CORE_ROOT.'/plugins/latexrender/tmp/'
+                          'tmp_path' => CORE_ROOT.'/plugins/latexrender/tmp/',
+                          'latex_font_size' => '12',
+                          'latex_formula_density' => '120',
+                          'latex_class' => 'article',
+                          'latex_strlen_limit' => '500',
+                          'latex_xsize_limit' => '500',
+                          'latex_ysize_limit' => '500',
                           );
 
     Plugin::setAllSettings($settings, 'latexrender');
@@ -44,6 +50,12 @@ Latex::$_dvips_path = $_settings['dvips_path'];
 Latex::$_latex_path = $_settings['latex_path'];
 Latex::$_convert_path = $_settings['convert_path'];
 Latex::$_identify_path = $_settings['identify_path'];
+Latex::$_font_size = intval($_settings['latex_font_size']);
+Latex::$_latexclass = $_settings['latex_class'];
+Latex::$_formula_density = intval($_settings['latex_formula_density']);
+Latex::$_string_length_limit = intval($_settings['latex_strlen_limit']);
+Latex::$_xsize_limit = intval($_settings['latex_xsize_limit']);
+Latex::$_ysize_limit = intval($_settings['latex_ysize_limit']);
 
 }
 
