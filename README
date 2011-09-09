@@ -1,5 +1,7 @@
 A basic pluging which permits the rendering of Latex commands in Wolf 
-CMS posts/articles.
+CMS posts/articles. The Wolf CMS system can be downloaded from its website
+at http://www.wolfcms.org. It is a mainly PHP-based content management system
+which is easy to install, configure and maintain and offers lots of plugins.
 
 In your html code, simply bracket the Latex code within [tex] LATEX CODE HERE 
 [/tex] and the code is being converted into an image and inserted into 
