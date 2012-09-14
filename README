@@ -3,6 +3,15 @@ CMS posts/articles. The Wolf CMS system can be downloaded from its website
 at http://www.wolfcms.org. It is a mainly PHP-based content management system
 which is easy to install, configure and maintain and offers lots of plugins.
 
+After installing into your Wolf-CMS plugins subfolder,the plugin folder for this
+plugin *MUST HAVE* the name 'latexrender', so rename after git-cloning. Also make
+*sure* that both the tmp and pictures folders inside the latexrender folder are
+readable and writable by the user running your webserver!
+
+When loading the plugin inside the Wolf-CMS system in the Administration section
+make *sure* that in the Latexrender Settings dialog the paths point to the correct
+locations AND that the absolute paths for TMP and PICTURES have no trailing slash!
+
 In your html code, simply bracket the Latex code within [tex] LATEX CODE HERE 
 [/tex] and the code is being converted into an image and inserted into 
 the post.
@@ -25,9 +34,6 @@ into:
 If you wish to apply the filter to other parts of your Wolf CMS website, 
 such as the Comments, you would have to use the static filter function
 in the appropriate places in the source code.
-
-The plugin folder for this pluging *MUST HAVE* the name 'latexrender', 
-so rename after git-cloning.
 
 This plugin is based on the vanilla php code for Latex Rendering 
 available at http://www.mayer.dial.pipex.com/tex.htm and has been 
